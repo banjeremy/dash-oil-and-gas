@@ -1,19 +1,19 @@
 # Import required libraries
-import pickle
 import copy
-import pathlib
-import urllib.request
-import dash
-import math
 import datetime as dt
-import pandas as pd
-from dash.dependencies import Input, Output, State, ClientsideFunction
+import math
+import pathlib
+import pickle
+import urllib.request
+
+import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import pandas as pd
+from dash.dependencies import ClientsideFunction, Input, Output, State
 
 # Multi-dropdown options
-from controls import COUNTIES, WELL_STATUSES, WELL_TYPES, WELL_COLORS
-
+from controls import COUNTIES, WELL_COLORS, WELL_STATUSES, WELL_TYPES
 
 # get relative data folder
 PATH = pathlib.Path(__file__).parent
@@ -719,4 +719,4 @@ def make_count_figure(well_statuses, well_types, year_slider):
 
 # Main
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=True, port=8080)
